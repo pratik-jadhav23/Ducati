@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Ducati.css">
+    <script src="Ducati.js"></script>
+    <title>Ducati</title>
+    <style>
+       
+
+    </style>
+   
+</head>                      
+<body>
+    
+    <div class="container-fluid" id="mainCont-f">
+        <div id="cont">
+            <div class="dfjcsb">
+                <div class="logo">
+                   <a href="Ducati.html"> <img src="scrambler.png" alt=""> THE LAND OF JOY</a>
+                </div>
+            </div>
+            <div class="dfjcsb20px">
+                <div class="countries" id="countries" >
+                    <button onclick="fun2(0)">
+                    <img src="data:image/png;base64,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" alt="">
+                    INDIA
+                    <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="countries3" id="countries3"  >
+                        <div class="countries3-icon">
+                            <button onclick="fun2(1)">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        <div class="countries3-1">
+                            <h1>Choose your country or region</h1>
+                            <div class="countries3-1-1">
+                               <div> <i class="fa-solid fa-earth-americas"></i> </div>
+                                INTERNATIONAL WEBSITE
+                            </div>
+                        </div>
+                        <div class="countries3-2">
+                            
+                            <div class="countries3-2-1">
+                                <h3>Asia/Pacific</h3>
+                                <div class="countries3-1-1">
+                                    <div><i class="fa-solid fa-earth-americas"></i></div>
+                                    INTERREGIONAL WEBSITE
+                                </div>
+                            </div>
+                            <div class="countries3-2-2-main">
+                                <div class="countries3-2-2">
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/au.png" alt=""> &nbsp; AUSTRALIA
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/cn.png" alt=""> &nbsp; CHINA
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/id.png" alt=""> &nbsp; INDONESIA
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/in.png" alt=""> &nbsp; INDIA
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/my.png" alt=""> &nbsp; MALAYSIA
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/mm.png" alt=""> &nbsp; MYANMAR
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/np.png" alt=""> &nbsp; NEPAL
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/nc.png" alt=""> &nbsp; NOUVELLE-CALÉDONIE
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/ph.png" alt=""> &nbsp; PHILIPPINES
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/sg.png" alt=""> &nbsp; SINGAPORE
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/jp.png" alt=""> &nbsp; 日本
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/kr.png" alt=""> &nbsp; 대한민국
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/th.png" alt=""> &nbsp; ไทย
+                                    </div>
+                                    <div class="countries3-2-2-1">
+                                        <img src="https://assets.ducati.com/dist/0.11.1/assets/img/flags/vn.png" alt=""> &nbsp; VIỆT NAM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="login">
+                    <button>
+                        MY DUCATI
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="container" id="iconExpand">
+            
+        </div>
+        <div class="container" id="mainContText">
+            <h5 class="racing">RACING</h5>
+            <h1>CHAMPIONS ON THE TRACK</h1>
+            <p>Live from the splendid setting of Madonna di Campiglio, the exclusive <br> event to present the 2023 Ducati Lenovo Team and the Arubait - <br> Racing Ducati team.</p>
+        </div>
+        <!-- <div class="container" id="discMore">
+            <div class="discMore">
+                <button>
+                    DISCOVER MORE
+                </button>
+            </div>
+        </div> -->
+        
+    </div>
+    <!-- <div class="container-fluid" id="fixedNavBar"> -->
+        <nav class="navbar fixed-top " id="bsFNavBar">
+            <div id="navBar">
+                <div class="dfjcsbacw95">
+                    <div class="icon">
+                        <button><i onclick="fun()"  id="barsicon" class="fa-solid fa-bars"></i></button>
+                    </div>
+                    <div class="text" id="models">
+                        <button onclick="models()">
+                            MODELS
+                            <i id="modelsicon" class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="text">
+                        EVENTS
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="text">
+                        <a href="">TEST RIDE</a>
+                    </div>
+                    <div class="img">
+                        <a href="">
+                            <img src="https://assets.ducati.com/dist/0.11.0/assets/img/ducati_id.png" alt="">
+                        </a>
+                    </div>
+                    <div class="text">
+                        <a href="">CONFIGURATOR</a>
+                    </div>
+                    <div class="text">
+                        <a href="">PRE-OWNED</a>
+                    </div>
+                    <div class="text">
+                        <a href="">DEALERS</a>
+                    </div>
+                </div>
+                <div class="navBar-ss">
+                    <div class="navBar-ss-1" id="navBar-ss-1">
+                        <button><i class="fa-solid fa-bars"></i></button>
+                    </div>
+                    <div class="navBar-ss-2" id="navBar-ss-1">
+                        <a href="Ducati.html">
+                            <img src="https://assets.ducati.com/dist/0.11.0/assets/img/ducati_id.png" alt="">
+                        </a>
+                    </div>
+                    <div class="navBar-ss-3" id="navBar-ss-1">
+                        <h6 style="color: rgba(214,0,0,255);">MODELS</h6>
+                    </div>
+                </div>
+                
+    
+            </div>
+          
+        
+        <div id="navBarIcon1">
+            <div class="subnavBarIcon1">
+                <div class="subnavBarIcon1-1" id="bikes">BIKES
+                    <div id="navBarIcon2">
+                        <div class="navBarIcon2-1">
+                            <div class="navBarIcon2-1-1">
+                                <p style="color:gray">DESERTX</p>
+                                <div>
+                                    <button>DesertX</button>
+                                </div>
+                            </div>
+                            <div class="navBarIcon2-1-1">
+                                <p style="color:gray">DIAVEL</p>
+                                <button>1260</button>
+                            </div>
+                            <div class="navBarIcon2-1-1">
+                                <p style="color:gray">XDIAVEL</p>
+                               <div class="navBarIcon2-1-1-2">
+                                <div><button>Dark</button></div>
+                                <div><button>Black Star</button></div>
+                               </div>
+                            </div>
+                            <div class="navBarIcon2-1-1">
+                                <p style="color:gray">HYPERMOTARD</p>
+                                <button>950 RVE</button>
+                            </div>
+                            <div class="navBarIcon2-1-1">
+                                <p style="color:gray">MONSTER</p>
+                                <button>Monster</button>
+                            </div>
+                            <div class="navBarIcon2-1-1">
+                                <p style="color:gray">MULTISTRADE</p>
+                                <div class="navBarIcon2-1-1-2">
+                                    <div><button>V2</button></div>
+                                <div><button>V4</button></div>
+                                <div><button>V4 Pikes Peak</button></div>
+                                </div>
+                            </div>
+                            <div class="navBarIcon2-1-1">
+                                <p style="color:gray">PANIGALE</p>
+                                <div class="navBarIcon2-1-1-2">
+                                    <div><button>V2</button></div>
+                                <div><button>V2 Bayliss</button></div>
+                                <div><button>V4</button></div>
+                                </div>
+                            </div>
+                            <div class="navBarIcon2-1-1">
+                                <p style="color:gray">STREETFIGHTER</p>
+                               <div class="navBarIcon2-1-1-2">
+                                <div><button>Dark</button></div>
+                                <div><button>Black Star</button></div>
+                               </div>
+                            </div>
+                            <div class="navBarIcon2-1-1"></div>
+                        </div>
+                        <div class="navBarIcon2-2">
+                            <p style="color:gray">DUCATI WORLDS</p>
+                                <div class="navBarIcon2-1-1-2">
+                                    <div><button>Scrambler</button></div>
+                                <div><button>Racetrack</button></div>
+                                <div><button>Travel</button></div>
+                                <div><button>lifestyle</button></div>
+                                <div><button>Sports & Fun</button></div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subnavBarIcon1-1" id="EQUIPMENT">EQUIPMENT</div>
+                <div class="subnavBarIcon1-1" id="RACING">RACING</div>
+                <div class="subnavBarIcon1-1" id="EVENTS">EVENTS</div>
+                <div class="subnavBarIcon1-1" id="SERVICE">SERVICE AND MAINTENANCE</div>
+                <div class="subnavBarIcon1-1" id="CORPORATE">CORPORATE</div>
+            </div>
+        </div>
+        <div class="subNavBar-models" id="subNavBar-models">
+            <div class="subNavBar-models1">
+                <div class="subNavBar-models1-1">
+                    <div class="subNavBar-models1-1-2">
+                        <img src="https://images.ctfassets.net/x7j9qwvpvr5s/SH02gdny9igmzmJDkEtj7/d2416c646de79ca94496414a90a19fdd/MY-22-DesertX-Model-Blocks-630x390.png?w=120&h=60&fit=pad" alt="">
+                        DESERTX
+                    </div>
+                    <div class="subNavBar-models1-1-2">
+                        <img src="https://images.ctfassets.net/x7j9qwvpvr5s/2ChjI0QWX9a1T5ZsZjymAA/caa499517d000771539e51648be44b91/MY23-Diavel-V4-Rd-NEW-Model-Blocks-630x390.png?w=120&h=60&fit=pad" alt="">
+                        DIAVEL<br><p class="red">NEW</p>
+                    </div>
+                    <div class="subNavBar-models1-1-2">
+                        <img src="https://images.ctfassets.net/x7j9qwvpvr5s/76P44tgaUDGNtiplUkMgg6/447d3491b500990787e9ff162458f2a3/MY21-XDiavel-Black-Star-Model-Blocks-630x390-01.jpg?w=120&h=60&fit=pad" alt="">
+                        XDIAVEL<br><p class="red">NEW</p>
+                    </div>
+                    <div class="subNavBar-models1-1-2">
+                        <img src="https://images.ctfassets.net/x7j9qwvpvr5s/6cfSP6ViyQ7qUs62M2xLXj/92d53f19b1aaab01e0821f96535e2d73/MY23-Monster-937-SP-NEW-Model-Blocks-630x390.png?w=120&h=60&fit=pad" alt="">
+                        MONSTER<br><p class="red">NEW</p>
+                    </div>
+                    <div class="subNavBar-models1-1-2">
+                        <img src="https://images.ctfassets.net/x7j9qwvpvr5s/3LYknQ6Hy73yp6RX3twTgQ/0fe6e63d3b4d454d0e6928a3cf82f0f7/MY-21-SF-V4-S-Bk-01-Model-Blocks-630x390-v03.png?w=120&h=60&fit=pad" alt="">
+                        STREETFIGHTER<br><p class="red">NEW</p>
+                    </div>
+                    <div class="subNavBar-models1-1-2">
+                        <img src="https://images.ctfassets.net/x7j9qwvpvr5s/50z2yoRqtEYOCFZ8ATX3ZG/077713ad0c35089bdd7d7d79e3635932/MY-22-MTS-V4-S-Rd-Model-Blocks-630x390-v06.png?w=120&h=60&fit=pad" alt="">
+                        MULTISTRADE<br><p class="red">NEW</p>
+                    </div>
+                    <div class="subNavBar-models1-1-2">
+                        <img src="https://images.ctfassets.net/x7j9qwvpvr5s/2OBs5O43R9pYIWwupQZpcO/9885cb2b65e7b6efb2508397e0448f17/MY-22-Panigale-V4-S-Model-Blocks-630x390-V06.png?w=120&h=60&fit=pad" alt="">
+                        PANIGALE<br><p class="red">NEW</p>
+                    </div>
+                </div>
+                <div class="subNavBar-models1-2">
+                    <div class="subNavBar-models1-1-2">
+                        <img src="https://images.ctfassets.net/x7j9qwvpvr5s/5Wc9muKG8p3ZHwvEd7d9hZ/57a26adff90255be20a84efdb76f09ad/MY21-SuperSport-950S-White-Model-Blocks-630x390-01.jpg?w=120&h=60&fit=pad" alt="">
+                        <p>SUPERSPORT</p>
+                    </div>
+                    <div class="subNavBar-models1-1-2">
+                        <img src="https://images.ctfassets.net/x7j9qwvpvr5s/6OaSvronbvBzp6a6X9DiH3/45a32d9468b8633ed77408ec482165b7/MY-22-HYM-950-RVE-01-Model-Blocks-630x390-v06.png?w=120&h=60&fit=pad" alt="">
+                        <p>HYPERMOTARD</p>
+                    </div>
+                    <div class="subNavBar-models1-1-2">
+                        <img src="https://images.ctfassets.net/x7j9qwvpvr5s/1aSH47Va7wgju2OOdlOc86/140e57ba8d261c2258f9b5c3cfdde6a6/SCR-1100SportPro-01-Book-testride_630x390.png?w=120&h=60&fit=pad" alt="">
+                        <p>SCRAMBLER</p>
+                    </div>
+                    <div class="subNavBar-models1-1-2">
+                        <img src="https://images.ctfassets.net/x7j9qwvpvr5s/5kay6kokLPWtD9bl5MrLXA/d65156089ef9250280de6362b24463b0/MY23-SCR-Icon-Y-Model-Blocks-630x390.png?w=120&h=60&fit=pad" alt="">
+                        SCRAMBLER 2G<br><p class="red">NEW</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- </div> -->
+    <div class="container-fluid" id="cont2">
+        <div id="subCont2">
+            <div id="boxshadow">
+                <div class="dfjcac" id="subBoxShadow">
+                    <div class="w95">
+                        <p class="grey">DUCATI RIDING EXPERIENCE</p>
+                        <h3>
+                            Registration for DRE Academy courses now
+                            open
+                        </h3>
+                        <p >
+                            All the information and details for registering for the first <br>
+                            appointments of the 2023 season are available on the dedicated <br>
+                            page of Ducati.com website.
+                        </p>
+                        <p class="red">
+                            DISCOVER MORE
+                        </p>
+                    </div>
+                </div>
+                <div class="right">
+                </div>
+            </div>
+            <div id="boxshadow">
+                <div class="dfjcac" id="subBoxShadow">
+                    <div class="w95">
+                        <p class="grey">PANIGALE V4 2022 WORLD CHAMPION REPLICA</p>
+                        <h3>
+                            World Champion Replica: Special Series
+                        </h3>
+                        <p>
+                            We are pleased to present two special series made to celebrate <br>
+                            this amazing 2022 in style: two super-special Panigale V45 <br>
+                            produced in only 260 examples in honor of Ducati's founding
+                            year, 1926.
+                        </p>
+                        <p class="red">DISCOVER MORE</p>
+                    </div>
+                </div>
+                <div class="right2">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="cont3">
+        <div class="cont3">
+            <div class="c3-1">
+                <div class="top">
+                    
+                </div>
+                <div class="bottom">
+                    <div class="c3-bottom">
+                        <p class="grey">PANIGALE V4</p>
+                        <h5>
+                            Panigale V4 2022 World
+                            Champion Replica: all available
+                            bikes sold out within hours
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="c3-2">
+                <div class="top">
+                    
+                </div>
+                <div class="bottom">
+                    <div class="c3-bottom">
+                        <p class="grey">CORPORATE</p>
+                        <h5>
+                            Ducati inaugurates the new
+                            Finitura e Delibera Estetica
+                            building in Borgo Panigale
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="c3-3">
+                <div class="top">
+                    
+                </div>
+                <div class="bottom">
+                    <div class="c3-bottom">
+                        <p class="grey">APPAREL</p>
+                        <h5>
+                            Ducati presents the 2023 Apparel
+                            collection: style, comfort and
+                            safety to live your passion
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="mainCont4">
+        <div class="container-fluid" id="cont4">
+            <div class="container">
+                <h3>EMBRACE THE DARKNESS.</h3>
+                <p>The XDiavel Dark enhances the beauty of <br>
+                    the cruiser design thanks to the matt black <br>
+                    color. The all black livery has been <br>
+                    extended to, the bodywork and finishes, <br>
+                    enhancing the Dutati 'Reduce to the Max' <br>
+                    design principle.</p>
+            </div>
+            <div class="container">
+                <div class="discMoreHere">
+                    <button>
+                        DISCOVER MORE HERE
+                    </button>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    <div class="container-fluid" id="cont5">
+        
+        <div class="w95" id="subCont5">
+            <div id="subCont5-1">
+                <div class="dfjcac" id="subBoxShadow">
+                    <div class="w95">
+                        <p class="grey">MY DUCATI</p>
+                        <h3>
+                            MyDucati App: lots of surprises for <br>
+                            Ducatisti!
+                        </h3>
+                        <p >
+                            Update your digital garage with the bikes you own to <br>
+                            receive dedicated information for you and your bike. Come <br>
+                            and visit us also at the MyDucati App tent: you'll discover <br>
+                            all the surprises we have specially for you.
+                        </p>
+                        <p class="red">
+                            REGISTER NOW
+                        </p>
+                    </div>
+                </div>
+                <div class="right">
+                </div>
+            </div>
+            <div class="container-fluid" id="mainCont5-2">
+                <div class="container-fluid" id="cont5-2">
+                    <div class="container">
+                        <h3>Take the fight to the streets.</h3>
+                        <p>Configure your dream Streetfighter V2 <br>
+                            on the Ducati Configurator using <br>
+                            genuine Ducati Performance <br>
+                            Accessories.</p>
+                    </div>
+                    <div class="container">
+                        <div class="discMoreHere">
+                            <button>
+                                CONFIGURE HERE
+                            </button>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+            <div class="container-fluid" id="mainCont5-3">
+                <div class="container-fluid" id="cont5-3">
+                    <div class="container">
+                        <h3>IT'S A JOY TO WEAR</h3>
+                        <p>The Scrambler apparel is the perfect mix of riding <br> comfort, lifestyle and self-expression.</p>
+                    </div>
+                    <div class="container">
+                        <div class="discMoreHere">
+                            <button>
+                                EXPLORE MORE
+                            </button>
+                        </div>
+                    </div>
+            
+                </div>
+        </div>
+        <div id="subCont5-4">
+            <div class="dfjcac" id="subBoxShadow">
+                <div class="w95">
+                    <p class="grey">CERTIFIED PRE-OWNED PROGRAM</p>
+                    <h3>
+                        We put our signature on every Ducati </BR>
+                        Approved pre-owned motorcycle
+                    </h3>
+                    <p >
+                        When choosing a Ducati Approved motorcycle, you choose <br>
+                        the certainty to have a Ducati on your side. The only thing <br>
+                        you need to think about will be how to best enjoy your new <br>
+                        bike.
+                    </p>
+                    <p class="red">
+                        FIND YOUR MOTORCYCLE
+                    </p>
+                </div>
+            </div>
+            <div class="right">
+            </div>
+        </div>
+        <div class="container-fluid" id="mainCont5-5">
+            <div class="container-fluid" id="cont5-5">
+                <div class="container">
+                    <h3>FOLLOW DUCATI INDIA ON </BR> INSTAGRAM</h3>
+                    <p>The style and performance of our bikes, <BR> the thrills of MotoGP and Superbike <br> championships, the emotion of all our <br> events and celebrating our riders. Discover <br> Ducati India on Instagram.</p>
+                </div>
+                <div class="container">
+                    <div class="discMoreHere">
+                        <button>
+                            FOLLOW US
+                        </button>
+                    </div>
+                </div>
+        
+            </div>
+    </div>
+    <div id="subCont5-5">
+        <div class="dfjcac" id="subBoxShadow">
+            <div class="w95">
+                <p class="grey">ACCESSORIES</p>
+                <h3>
+                    Ducati Performance Exhaust Systems
+                </h3>
+                <p >
+                    The Ducati Performance exhausts are designed to enhance <BR>
+                    the look of your Ducati and enhance the performance, both <br>
+                    on track and on the streets.
+                </p>
+                <p class="red">
+                    FIND OUT MORE
+                </p>
+            </div>
+        </div>
+        <div class="right">
+        </div>
+    </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="cont6">
+        <div class="subCont6">
+            <h3>Subscribe to the Ducati newsletter</h3>
+            <p class="para1">
+                By entering your email address you will always be up to date with the latest Ducati news and promotions. <br>
+                At any time you can complete your registration and create your profile on Ducati.com to receive personalised <br>
+                communications and access all features.
+            </p>
+            <p class="para1">
+                I declare that I have read the privacy policy drafted pursuant to art. 13 of EU Regulation 2016/679 on the <br>
+                protection of personal data ('Reguiation") and | authorise the processing of my email address for the purposes <br>
+                specified therein.
+            </p>
+            <div class="subscribe">
+                <div class="subSubscribe">
+                    <div class="email">
+                        <input type="email" placeholder="ENTER A VALID EMAIL ADDRESS">
+                    </div>
+                    <div class="subscribeButton">
+                        <button>SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container-fluid" id="cont7">
+        <div class="subCont7">
+            <div class="subCont7-top">
+                <div class="subCont7-top-1">
+                    <div class="subCont7-top-1-1">
+                         <h1 style="color: gray; font-weight: 900;"><I>DUCATI</I></h1>
+                    </div>
+                    <div class="subCont7-top-1-2">
+                        <h3>Member of the Audi Group</h3>
+                    </div>
+                </div>
+                <div class="subCont7-top-2">
+                    <div class="subCont7-top-2-1" id="subCont7-top-2">TERMS OF USE</div>
+                    <div class="subCont7-top-2-2" id="subCont7-top-2">PRIVACY INFORMATION</div>
+                    <div class="subCont7-top-2-3" id="subCont7-top-2">COOKIES INFORMATION</div>
+                </div>
+                <div class="subCont7-top-3">
+                    <p>
+                        Copyright © 2020 Ducati Motor Holding S.p.A - A Sole Shareholder Company - A
+                        Company subject to the Management and Coordination <br> activities of AUDI AG. All 
+                        rights reserved. VAT 05113870967
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="subCont7-2">
+            <div class="subCont7-2-l">
+                <div class="subCont7-2-l-1">
+                    <div class="subCont7-2-l-1-1"></div>
+                    <div class="subCont7-2-l-1-2">THE LAND OF JOY</div>
+                </div>
+                <div class="subCont7-2-l-2">
+                    <div class="subCont7-2-l-2-1"></div>
+                    <div class="subCont7-2-l-1-2">RADIO SCRAMBLER</div>
+                </div>
+            </div>
+            <div class="subCont7-2-m">
+                <div class="subCont7-2-m-1"><i class="fa-brands fa-facebook-f"></i></div>
+                <div class="subCont7-2-m-1"><i class="fa-brands fa-twitter"></i></div>
+                <div class="subCont7-2-m-1"><i class="fa-brands fa-instagram"></i></div>
+                <div class="subCont7-2-m-1"><i class="fa-brands fa-youtube"></i></div>
+            </div>
+            <div class="subCont7-2-r">
+                <div class="countries2">
+                    <button>
+                        <img src="data:image/png;base64,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" alt="">
+                        INDIA
+                        <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    
+
+
+</body>
+</html>
