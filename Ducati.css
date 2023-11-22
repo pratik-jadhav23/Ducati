@@ -451,6 +451,10 @@
 }
 .racing{
     font-weight: 400;
+    font-family: poppins;
+}
+p{
+    font-family: poppins;
 }
 #mainContText{
     position: relative;
